@@ -1,25 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
-
+import {User} from './users.js';
 function App() {
+    const useit =[
+        {name:"pedro",age:23},
+        {name:"farhaan",age:23}
+    ];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {useit.map((user,key) => {
+          return(
+              <User name={user.name} age={user.age}/>)
+      })}
     </div>
   );
 }
-
 export default App;
